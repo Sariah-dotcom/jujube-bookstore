@@ -23,13 +23,16 @@ function App() {
             <SearchBar onSearch={searchBooks} />
             <div className="p-10">
                 {books.length > 0 ? (
-                    <ul>
+                    <ul className='flex gap-3 flex-wrap'>
+                      <h2 className='text-2xl'>{books.numFound}</h2>
                         {books.map((book) => (
+                            <div className="border-2 border-grey p-8 w-64">
                             <li key={book.key}>
-                                <h3>{book.title}</h3>
+                                <h3 className='text-xl font-bold text-dark-green'>{book.title}</h3>
                                 <p>{book.author_name?.join(', ')}</p>
                                 <p>First published: {book.first_publish_year}</p>
                             </li>
+                          </div>
                         ))}
                     </ul>
                 ) : (
