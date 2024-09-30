@@ -19,42 +19,31 @@ app.get('/', (req, res) => {
 
 // Route to search for books by title or author
 app.get('/books/search', async (req, res) => {
+    const { title, author } = req.query;
+  
+    // Create a filter object
+    let filter = {};
+  
+    // Build the filter based on provided search parameters
+    if (title) {
+      filter.title = { $regex: title, $options: 'i' }; // Case-insensitive search for title
+    }
+    
+    if (author) {
+      filter.author = { $regex: author, $options: 'i' }; // Case-insensitive search for author
+    }
+  
     try {
-        const { title, author } = req.query;
-
-        // Check if either title or author is provided in query parameters
-        if (!title && !author) {
-            return res.status(400).json({
-                message: 'Please provide either a title or author to search for.',
-            });
-        }
-
-        // Build search criteria based on query parameters
-        const searchCriteria = {};
-        if (title) {
-            searchCriteria.title = new RegExp(title, 'i'); // 'i' makes it case-insensitive
-        }
-        if (author) {
-            searchCriteria.author = new RegExp(author, 'i'); // 'i' makes it case-insensitive
-        }
-
-        // Search for books in the database
-        const books = await Book.find(searchCriteria);
-
-        // Return the search results
-        if (books.length > 0) {
-            return res.status(200).json(books);
-        } else {
-            return res.status(404).json({
-                message: 'No books found matching the search criteria.',
-            });
-        }
-
+      const books = await Book.find(filter); // Find books based on filter
+      res.status(200).json(books);
     } catch (error) {
-        console.error(error.message);
-        return res.status(500).json({ message: 'Internal Server Error' });
+      console.error(error);
+      res.status(500).send('Server error');
     }
 });
+  
+  
+  
 
 // Route to save a new book
 app.post('/books', async (req, res) => {
