@@ -1,7 +1,7 @@
-import { CiMenuFries } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaFacebook, FaInstagramSquare,FaYoutube } from "react-icons/fa";
 import { useState } from "react";
+import { IoIosMenu } from "react-icons/io";
 
 export default function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -14,7 +14,7 @@ export default function Header() {
     <div className='p-4 w-full h-24 drop-shadow-md bg-white z-20 fixed'>
       <div className="w-full h-full flex items-center justify-between">
         <img src="/images/jujube-logo (1).png" alt="Logo" className="h-16 w-auto" />
-        <CiMenuFries id='menu' className="h-8 w-8 text-dark-green" onClick={showMenu} />
+        <IoIosMenu id='menu' className="h-8 w-8 text-lime-green" onClick={showMenu} />
 
         {/* Menu Items */}
         <div

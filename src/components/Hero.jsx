@@ -1,15 +1,34 @@
-import React from 'react'
-import SearchBar from './SearchBar'
+
+import SearchBar from './SearchBar';
+import BookCarousel from './BookCarousel';
+import { useEffect, useRef } from 'react';
+import { annotate } from 'rough-notation';
 
 export default function Hero() {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const annotation = annotate(elementRef.current, { type: 'underline', color: '#87C21D', strokeWidth: 2 });
+    
+    const playIndefinitely = () => {
+      annotation.show();
+
+      setTimeout(() => {
+        annotation.hide();
+      }, 2000); // Time after which the annotation hides (adjust as necessary)
+    };
+
+    const intervalId = setInterval(playIndefinitely, 4000);
+  }, []);
+
   return (
-    <div className='flex pt-24 overflow-x-hidden'>
-      <div className=' flex flex-col gap-3 py-20 px-8 mt-10'>
-        <h1 className='font-poppins font-bold text-4xl pr-6'>There is no friend as loyal as a book.</h1>
-        <p className='text-lime-green font-bold italic font-inter mt-2 text-sm'>- Ernest Hemmingway</p>
+    <div className='py-20'>
+      <div className='flex flex-col text-center items-center gap-5 py-20 px-4 mt-10'>
+        <div className="bg-light-green rounded-full p-1 w-36 mb-5"><p className='font-montserrat font-bold text-lime-green text-xs'>Welcome to Jujube</p></div>
+        <h1 className='font-montserrat font-bold text-4xl'>There is no <br /> friend as loyal <br /> as a <span ref={elementRef}>book.</span></h1>
         <SearchBar />
       </div>
-      <img src="/images/Ellipse 14.png" alt="blob" className='absolute -right-5 -z-2 -mt-5' />
+      <BookCarousel />
     </div>
   )
 }

@@ -25,9 +25,9 @@ function App() {
         <div>
            <Header />
             <Hero />
-            <About />
+            {/* <About />
             <BestSellers />
-            <Footer />
+            <Footer /> */}
       </div>
     );
 }

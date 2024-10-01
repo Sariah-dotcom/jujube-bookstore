@@ -1,4 +1,9 @@
+@import 'flowbite';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'flowbite';
+
+.custom-placeholder::placeholder {
+    color: #87C21D; /* Change this to your desired placeholder color */
+    opacity: 1; /* Ensures the placeholder color is not transparent */
+}

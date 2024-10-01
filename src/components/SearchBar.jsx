@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, TextInput } from 'flowbite-react';
 
+
 export default function SearchBar() {
+ 
   const [query, setQuery] = useState('');
   const [author, setAuthor] = useState('');
   const [books, setBooks] = useState([]);
@@ -52,19 +54,19 @@ export default function SearchBar() {
   return (
     <div className="search-container z-1">
       <div className='flex items-center'>
+        
         <TextInput
           type="text"
           placeholder="Search by title or author"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          style={{ borderRadius: '100px', paddingRight: '5rem', paddingTop: '1rem', paddingBottom: '1rem' }}
+          style={{ borderRadius: '100px', paddingRight: '5rem', paddingTop: '1rem', paddingBottom: '1rem', paddingLeft:'1rem' }}
           className="w-full py-4 font-inter"
         />
 
-        <div className='absolute right-10'>
-              <Button pill className='bg-med-green font-inter z-10' >Search</Button>
-
-            </div>
+        <div className='absolute right-14'>
+          <Button pill className='bg-med-green font-inter z-10' >Search</Button>
+        </div>
       </div>
 
       {error && <p className="error">{error}</p>}
@@ -73,13 +75,13 @@ export default function SearchBar() {
         {books.length > 0 ? (
           books.map((book) => (
             <div key={book._id} className='mb-3 border-b-2 border-black py-3'>
-              <h3 className='font-poppins font-semibold'>{book.title}</h3>
+              <h3 className='font-montserrat font-semibold'>{book.title}</h3>
               <p className='font-inter italic text-xs mb-2'>{book.author}</p>
               <p className='font-inter text-xs'>{book.genre}</p>
             </div>
           ))
         ) : (
-          <p>No books found.</p>
+          <p></p>
         )}
       </div>
     </div> 

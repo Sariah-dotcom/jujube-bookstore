@@ -9,14 +9,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
         inter : ['Inter', 'sans-serif'] 
       },
       colors: {
         "dark-green": "#0C8242",
         "lime-green": "#87C21D",
         "med-green": "#8EBA3F",
-        "lighter-green": "#D4E7C5",
+        "light-green": "#D5FF8A",
         "grey":"#6B6B6B"
       },
     },
