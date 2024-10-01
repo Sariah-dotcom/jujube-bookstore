@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import SearchBar from './components/SearchBar.jsx'; 
 import axios from 'axios';
 import Hero from './components/Hero.jsx';
 import Header from './components/Header.jsx';
+import About from './components/About.jsx'; 
+import BestSellers from './components/BestSellers.jsx';
+import Footer from './components/Footer.jsx';
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
         <div>
            <Header />
             <Hero />
+            <About />
+            <BestSellers />
+            <Footer />
       </div>
     );
 }
