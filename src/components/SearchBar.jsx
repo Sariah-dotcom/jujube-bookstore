@@ -61,7 +61,7 @@ export default function SearchBar() {
           className="w-full py-4 font-inter"
         />
 
-        <div className='absolute right-8'>
+        <div className='absolute right-10'>
               <Button pill className='bg-med-green font-inter z-10' >Search</Button>
 
             </div>

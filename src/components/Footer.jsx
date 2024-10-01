@@ -7,7 +7,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
   return (
     <div>
-      <footer className='flex flex-col gap-12 p-6'>
+      <footer className='flex flex-col gap-12 p-8 mt-20'>
 
         <div className='flex items-center gap-5'>
             <img src="/images/jujube-logo (1).png" alt="Logo" className="h-16 w-auto" />
