@@ -43,8 +43,6 @@ app.get('/books/search', async (req, res) => {
 });
   
   
-  
-
 // Route to save a new book
 app.post('/books', async (req, res) => {
     try {
@@ -63,6 +61,7 @@ app.post('/books', async (req, res) => {
             genre,
             publishYear,
             price,
+            coverImage,
         };
 
         // Save the new book to the database

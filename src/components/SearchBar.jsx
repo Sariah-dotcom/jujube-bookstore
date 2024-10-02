@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, TextInput } from 'flowbite-react';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar() {
  
@@ -9,6 +9,7 @@ export default function SearchBar() {
   const [author, setAuthor] = useState('');
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const debounce = (func, delay) => {
     let timeoutId;
@@ -49,7 +50,12 @@ export default function SearchBar() {
 
   useEffect(() => {
     debouncedSearch();
-  }, [query, author]); // Trigger search whenever query or author changes
+  }, [query, author]); // Trigger search
+
+  // Function to handle book click
+  const handleBookClick = (bookId) => {
+    navigate(`/books/${bookId}`); // Navigate to the book details page
+  };
 
   return (
     <div className="search-container z-1">
@@ -73,10 +79,10 @@ export default function SearchBar() {
 
       <div className="results">
         {books.length > 0 ? (
-          books.map((book) => (
-            <div key={book._id} className='mb-3 border-b-2 border-black py-3'>
+          books.slice(0, 5).map((book) => ( // Limit results to first 5 books
+            <div key={book._id} onClick={() => handleBookClick(book._id)} className='mb-3 border-b-2 border-black py-3 text-left'>
               <h3 className='font-montserrat font-semibold'>{book.title}</h3>
-              <p className='font-inter italic text-xs mb-2'>{book.author}</p>
+              <p className='font-inter italic text-xs'>{book.author}</p>
               <p className='font-inter text-xs'>{book.genre}</p>
             </div>
           ))

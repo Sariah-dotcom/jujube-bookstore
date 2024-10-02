@@ -12,7 +12,7 @@ export default function Footer() {
         <div className='flex items-center gap-5'>
             <img src="/images/jujube-logo (1).png" alt="Logo" className="h-16 w-auto" />
            
-            <div className='flex flex-col gap-2 text-grey'>
+            <div className='flex flex-col gap-2'>
                 <h3 className='font-bold font-poppins text-sm'>Jujube Bookstore</h3>
 
                 <div className='flex items-center gap-2'>
@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
         </div>
 
-        <div className='flex gap-12 text-xs text-grey'>
+        <div className='flex gap-12 text-xs'>
             <div className='flex flex-col gap-2 font-inter'>
                 <a href="">Home</a>
                 <a href="">About</a>
@@ -44,7 +44,7 @@ export default function Footer() {
                 <a href="">Best Sellers</a>
             </div>
         </div>
-        <div className='font-inter text-xs text-grey border-t-2 border-grey pt-3 text-center'>Jujube Bookstore © {year} </div>
+        <div className='font-inter text-xs border-t-2 border-black pt-3 text-center'>Jujube Bookstore © {year} </div>
       </footer>
     </div>
   )

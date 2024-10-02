@@ -8,7 +8,7 @@ export default function Hero() {
   const elementRef = useRef(null);
 
   useEffect(() => {
-    const annotation = annotate(elementRef.current, { type: 'underline', color: '#87C21D', strokeWidth: 2 });
+    const annotation = annotate(elementRef.current, { type: 'highlight', color: '#87C21D', strokeWidth: 2 });
     
     const playIndefinitely = () => {
       annotation.show();
