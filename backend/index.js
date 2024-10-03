@@ -47,7 +47,7 @@ app.get('/books/search', async (req, res) => {
 app.post('/books', async (req, res) => {
     try {
         // Check if all required fields are filled
-        const { title, author, genre, publishYear, price } = req.body;
+        const { title, author, genre, publishYear, price, coverImage, description } = req.body;
         if (!title || !author || !genre || !publishYear || !price) {
             return res.status(400).json({
                 message: 'All fields are required.',
@@ -70,7 +70,7 @@ app.post('/books', async (req, res) => {
         return res.status(201).json(book);
 
     } catch (error) {
-        console.log(error.message);
+        console.error(error.message);
         return res.status(500).json({ message: 'Internal Server Error' });
     }
 });
@@ -85,7 +85,7 @@ app.get('/books', async (req, res) => {
             data: books
         });
     } catch(error){
-        console.log(error.message);
+        console.error(error.message);
     }
 });
 
@@ -97,7 +97,7 @@ app.get('/books/:id', async (req, res) => {
         return res.status(200).json(book);
 
     } catch(error){
-        console.log(error.message);
+        console.error(error.message);
     }
 });
 

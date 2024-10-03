@@ -34,7 +34,7 @@ export default function BookDetails() {
     <div className='pt-48 flex flex-col items-center lg:flex-row lg:pt-32'>
 
       <div className='relative z-10 flex flex-col items-center text-center lg:w-5/6 lg:flex-row lg:text-left lg:gap-10 lg:pl-16'>
-        <h1 className='mb-5 font-plus text-lime-green font-bold text-2xl lg:text-4xl lg:w-1/2'>{book.title}</h1>
+        <h1 className='mb-10 font-plus text-lime-green font-bold text-3xl lg:text-4xl lg:w-1/2'>{book.title}</h1>
         {book.coverImage ? (
           <img
             src={book.coverImage}
@@ -50,7 +50,7 @@ export default function BookDetails() {
         )}
       </div>
     
-      <div className="font-inter text-white bg-gradient-to-b from-med-green to-dark-green w-full px-10 py-16 -mt-10 flex flex-col gap-5 lg:py-10 lg:px-32">
+      <div className="font-inter text-white bg-gradient-to-b from-med-green to-dark-green w-full px-10 py-24 -mt-10 flex flex-col gap-5 lg:py-10 lg:px-32">
         
         <div>
           <h2 className='font-semibold text-xl mb-1'>Author</h2>

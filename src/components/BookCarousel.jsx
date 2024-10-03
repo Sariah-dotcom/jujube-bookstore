@@ -8,30 +8,27 @@ export default function BookCarousel() {
   return (
     <div className="">
       <Carousel
-        showArrows={false}        
+        showArrows={true}        
         showThumbs={false}        
         showStatus={false}        
-        infiniteLoop={true}       
-        autoPlay={true}           
-        interval={10000}           
-        transitionTime={10000}      
+        infiniteLoop={true}                 
+        transitionTime={1000}      
         stopOnHover={false}       
         swipeable={false} 
       >
 
+
       {/* Slide 1 */}
       <div className="carouselSlide flex gap-1 justify-center w-full">
-          <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781760850227/the-winter-dress-9781760850227_lg.jpg" />
-          <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781668020777/medea-9781668020777_lg.jpg"/>
+        <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781760850227/the-winter-dress-9781760850227_lg.jpg" />
+        <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781760850227/the-winter-dress-9781760850227_lg.jpg" />
       </div>
         
-        {/* Slide 2 */}
-        <div className="carouselSlide flex gap-1 justify-center w-full mr-3">
+      {/* Slide 2 */}
+      <div className="carouselSlide flex gap-1 justify-center w-full mr-3">
         <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781771683609/if-you-knew-my-name-9781771683609_lg.jpg" />
         <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781771683609/if-you-knew-my-name-9781771683609_lg.jpg" />
-
-          
-        </div>
+      </div>
         {/* Slide 3 */}
         <div className="carouselSlide flex gap-1 justify-center w-full">
         <Card imgLink="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781771683609/if-you-knew-my-name-9781771683609_lg.jpg" />
