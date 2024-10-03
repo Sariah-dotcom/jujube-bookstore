@@ -13,14 +13,14 @@ export default function Footer() {
             <img src="/images/jujube-logo (1).png" alt="Logo" className="h-16 w-auto" />
            
             <div className='flex flex-col gap-2'>
-                <h3 className='font-bold font-poppins text-sm'>Jujube Bookstore</h3>
+                <h3 className='font-bold font-plus text-sm'>Jujube Bookstore</h3>
 
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 font-inter'>
                     <FaLocationDot />
                     <p className='text-xs'>Paul's Avenue, Kingstown</p>
                 </div>
 
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 font-inter'>
                     <IoCall />
                     <p className='text-xs'>(784) 455-5599</p>
                 </div>

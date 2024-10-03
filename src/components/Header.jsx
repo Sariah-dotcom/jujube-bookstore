@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <div className='p-4 w-full h-24 drop-shadow-sm bg-white z-20 fixed lg:px-16'>
+    <div className='p-4 w-full h-24 drop-shadow-md bg-white z-20 fixed lg:px-16'>
       <div className="w-full h-full flex items-center justify-between">
       
       <Link to='/' aria-label="Home">
