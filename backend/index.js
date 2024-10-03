@@ -62,6 +62,7 @@ app.post('/books', async (req, res) => {
             publishYear,
             price,
             coverImage,
+            description,
         };
 
         // Save the new book to the database

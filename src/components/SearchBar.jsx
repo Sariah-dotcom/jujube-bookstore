@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { IoSearch } from "react-icons/io5";
 import { Button, TextInput } from 'flowbite-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -68,11 +69,8 @@ export default function SearchBar() {
           onChange={(e) => setQuery(e.target.value)}
           style={{ borderRadius: '100px', paddingRight: '5rem', paddingTop: '1rem', paddingBottom: '1rem', paddingLeft:'1rem' }}
           className="w-full py-4 font-inter"
+          rightIcon={IoSearch}
         />
-
-        <div className='absolute right-14'>
-          <Button pill className='bg-med-green font-inter z-10' >Search</Button>
-        </div>
       </div>
 
       {error && <p className="error">{error}</p>}
@@ -81,7 +79,7 @@ export default function SearchBar() {
         {books.length > 0 ? (
           books.slice(0, 5).map((book) => ( // Limit results to first 5 books
             <div key={book._id} onClick={() => handleBookClick(book._id)} className='mb-3 border-b-2 border-black py-3 text-left'>
-              <h3 className='font-montserrat font-semibold'>{book.title}</h3>
+              <h3 className='font-plus font-semibold'>{book.title}</h3>
               <p className='font-inter italic text-xs'>{book.author}</p>
               <p className='font-inter text-xs'>{book.genre}</p>
             </div>

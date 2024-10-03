@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
+        plus: ['Plus Jakarta Sans', 'sans-serif'],
         inter : ['Inter', 'sans-serif'] 
       },
       colors: {
@@ -19,6 +19,9 @@ export default {
         "light-green": "#D5FF8A",
         "grey":"#6B6B6B"
       },
+      dropShadow: {
+        '2xl': '0 35px 35px rgba(0, 0, 0, 0.65)',
+      }
     },
   },
   plugins: [

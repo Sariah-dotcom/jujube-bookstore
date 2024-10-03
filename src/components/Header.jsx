@@ -12,18 +12,25 @@ export default function Header() {
   }
 
   return (
-    <div className='p-4 w-full h-24 drop-shadow-md bg-white z-20 fixed'>
+    <div className='p-4 w-full h-24 drop-shadow-sm bg-white z-20 fixed lg:px-16'>
       <div className="w-full h-full flex items-center justify-between">
       
       <Link to='/' aria-label="Home">
           <img src="/images/jujube-logo (1).png" alt="Logo" className="h-16 w-auto" />
       </Link>
-        <IoIosMenu id='menu' className="h-8 w-8 text-lime-green" onClick={showMenu} />
+
+      <div className='hidden lg:flex text-lime-green text-lg font-plus gap-10'>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Shop by Category</a>
+      </div>
+        
+      <IoIosMenu id='menu' className="h-8 w-8 text-lime-green lg:hidden" onClick={showMenu} />
 
         {/* Menu Items */}
         <div
           id="menu-items"
-          className={`fixed top-0 left-0 h-screen w-full text-white font-montserrat flex flex-col items-left justify-center px-10 gap-10 bg-med-green transition-transform ${
+          className={`fixed top-0 left-0 h-screen w-full text-white font-plus flex flex-col items-left justify-center px-10 gap-10 bg-med-green transition-transform ${
             menuVisible ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
@@ -32,10 +39,12 @@ export default function Header() {
             className="absolute top-10 right-5 h-8 w-8 text-white cursor-pointer"
             onClick={showMenu}
           />
-          
-          <a href="#" className="text-2xl">Home</a>
-          <a href="#" className="text-2xl">About</a>
-          <a href="#" className="text-2xl">Shop by Category</a>
+
+          <div className="flex flex-col gap-5 text-2xl">
+            <a href="#" className="hover:text-dark-green">Home</a>
+            <a href="#" className="hover:text-dark-green">About</a>
+            <a href="#" className="hover:text-dark-green">Shop by Category</a>
+          </div>
           
           <div className='flex text-white gap-10 text-3xl mt-24'>
             <FaFacebook className="h-10 w-10" />

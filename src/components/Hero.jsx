@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import BookCarousel from './BookCarousel';
 import { useEffect, useRef } from 'react';
 import { annotate } from 'rough-notation';
+import BookDisplay from './BookDisplay';
 
 export default function Hero() {
   const elementRef = useRef(null);
@@ -15,7 +16,7 @@ export default function Hero() {
 
       setTimeout(() => {
         annotation.hide();
-      }, 2000); // Time after which the annotation hides (adjust as necessary)
+      }, 2000); // Time after which the annotation hides
     };
 
     const intervalId = setInterval(playIndefinitely, 4000);
@@ -23,12 +24,22 @@ export default function Hero() {
 
   return (
     <div className='py-20'>
-      <div className='flex flex-col text-center items-center gap-5 py-20 px-4 mt-10'>
-        <div className="bg-light-green rounded-full p-1 w-36 mb-5"><p className='font-montserrat font-bold text-lime-green text-xs'>Welcome to Jujube</p></div>
-        <h1 className='font-montserrat font-bold text-4xl'>There is no <br /> friend as loyal <br /> as a <span ref={elementRef}>book.</span></h1>
+      <div className='lg:flex justify-between'>
+
+      <div className='flex flex-col text-center items-center gap-5 py-20 px-4 mt-10 lg:text-left lg:items-baseline lg:pl-20 lg:gap-8'>
+        <div className="bg-light-green rounded-full p-1 w-36 mb-5 lg:pl-4"><p className='font-plus font-bold text-lime-green text-xs'>Welcome to Jujube</p></div>
+        <h1 className='font-plus font-bold text-4xl leading-[1.5] lg:text-6xl lg:leading-[1.2]'>There is no <br /> friend as loyal <br /> as a <span ref={elementRef}>book.</span></h1>
         <SearchBar />
       </div>
-      <BookCarousel />
+      <div className='hidden lg:inline'>
+        <img src="/images/blobs.png" alt="blobs" className='-mt-64' />
+      </div>
+
+      </div>
+
+      <BookDisplay className='lg:hidden'/>
+      
+      {/* <BookCarousel /> */}
     </div>
   )
 }
